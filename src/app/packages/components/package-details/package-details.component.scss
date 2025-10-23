@@ -1,0 +1,56 @@
+.package-details-card {
+  margin: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    color: gray;
+  }
+
+  mat-card-content {
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    button {
+      min-width: 100px;
+    }
+  }
+}
+
+.loading-card {
+  margin: 16px;
+  padding: 16px;
+  text-align: center;
+  font-style: italic;
+}
+
+ @media (max-width: 600px) {
+  .package-details-card {
+    padding: 16px;
+
+    .actions {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<ng-container *ngIf="package$ | async as pkg; else loading">
+  <mat-card class="package-details-card mat-elevation-z4">
+    <mat-card-title class="title">
+      {{ pkg | language : currentLang : "name" }}
+    </mat-card-title>
+    <mat-card-subtitle class="subtitle">
+      {{ pkg.status }} • {{ pkg.region }} •
+      {{ pkg.createdAt | date : "yyyy-MM-dd" }}
+    </mat-card-subtitle>
+
+    <mat-card-content>
+      <p>{{ pkg | language : currentLang : "description" }}</p>
+    </mat-card-content>
+
+    <mat-card-actions class="actions">
+      <button mat-raised-button color="primary" (click)="edit(pkg.id)">
+        Edit
+      </button>
+      <button mat-stroked-button (click)="toggleLang()">
+        Lang ({{ currentLang }})
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>
+
+<ng-template #loading>
+  <mat-card class="loading-card mat-elevation-z2"> Loading... </mat-card>
+</ng-template>

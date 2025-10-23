@@ -1,0 +1,52 @@
+.package-list-card {
+  margin: 16px;
+  padding: 16px;
+
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+    align-items: center;
+
+    .flex-item {
+      flex: 1 1 200px;
+      min-width: 150px;
+    }
+
+    button {
+      height: 36px;
+      min-width: 120px;
+    }
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    min-width: 600px;
+
+    th.mat-header-cell,
+    td.mat-cell {
+      padding: 8px 12px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .package-list-card .toolbar {
+    flex-direction: column;
+    gap: 8px;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  table {
+    min-width: 100%;
+    font-size: 14px;
+  }
+}
